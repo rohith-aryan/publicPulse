@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Customer Feedback Analyzer</title>
+    <link rel="stylesheet" href="{% static 'analyzer/style.css' %}">
+</head>
+<body>
+    <div class="navbar">
+        <h1>Customer Feedback Analyzer</h1>
+    </div>
+
+    <div class="hero-section">
+        <form method="POST" class="search-bar">
+            {% csrf_token %}
+            <input type="url" name="url" placeholder="Enter Yelp URL" required>
+            <button type="submit">Search</button>
+        </form>
+
+        <div class="top-row">
+            <div class="box">
+                <h3>Final Verdict</h3>
+                <p class="final-verdict">{{ verdict }}</p>
+            </div>
+            <div class="box">
+                <h3>Overall Rating</h3>
+                <p class="overall-rating">{{ overall_rating }}</p>
+                <div class="rating-stars">{{ stars }}</div>
+            </div>
+        </div>
+
+        <div class="bottom-row">
+            <div class="box">
+                <h3>% of Ratings</h3>
+                {% for rating, percent in ratings.items %}
+                    <p>{{ rating }} stars</p>
+                    <div class="rating-bar">
+                        <div class="rating-fill" style="width: {{ percent }}%;"></div>
+                    </div>
+                {% endfor %}
+
+            </div>
+
+            <div class="box">
+                <h3>Top Reviews</h3>
+                {% for review in top_reviews %}
+                    <p>"{{ review }}"</p>
+                {% endfor %}
+            </div>
+
+            <div class="box">
+                <h3>Keywords</h3>
+                {% for keyword in keywords %}
+                    <p>#{{ keyword }}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,145 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    background-color: #0D1117;
+    color: #C9D1D9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(90deg, #0A0F1C, #161B22);
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.navbar h1 {
+    color: #58A6FF;
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Input */
+input[type="search"] {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    background-color: #21262D;
+    color: #C9D1D9;
+    margin-bottom: 30px;
+}
+
+/* Rows */
+.top-row, .bottom-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+/* Top Row has 2 */
+.top-row .box {
+    flex: 1;
+    min-height: 250px;
+}
+
+/* Bottom Row has 3 */
+.bottom-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Boxes */
+.box {
+    background: #161B22;
+    color: #C9D1D9;
+    padding: 20px;
+    border-radius: 15px;
+    min-height: 300px;
+    box-shadow: 0 0 10px rgba(88, 166, 255, 0.15);
+    transition: transform 0.2s ease;
+}
+
+.box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(88, 166, 255, 0.3);
+}
+
+/* Headings */
+.box h3 {
+    margin-bottom: 15px;
+    color: #58A6FF;
+    border-bottom: 1px solid #30363D;
+    padding-bottom: 5px;
+}
+
+/* Rating Bars */
+.rating-bar {
+    background-color: #21262D;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.rating-fill {
+    background-color: #58A6FF;
+    height: 100%;
+    transition: width 0.3s ease-in-out;
+}
+
+/* Optional star rating */
+.rating-stars {
+    color: #FFD700;
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+.search-bar {
+    display: flex;
+    margin-bottom: 30px;
+    gap: 10px;
+}
+
+.search-bar input[type="search"] {
+    flex: 1;
+    padding: 15px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    background-color: #21262D;
+    color: #C9D1D9;
+}
+
+.search-bar button {
+    padding: 15px 25px;
+    font-size: 16px;
+    background-color: #238636;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #2EA043;
+}
